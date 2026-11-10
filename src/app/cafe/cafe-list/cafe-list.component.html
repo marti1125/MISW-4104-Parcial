@@ -1,0 +1,28 @@
+<div class="mt-4">
+  <table class="table table-sm table-striped table-hover">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Tipo</th>
+        <th scope="col">Región</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cafe of cafes; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ cafe.nombre }}</td>
+        <td>{{ cafe.tipo }}</td>
+        <td>{{ cafe.region }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <hr/>
+  <div class="mt-3">
+    <ul class="list-unstyled">
+      <li *ngFor="let t of totalPorTipo | keyvalue">
+        Total {{ nombreCafe(t.key) }}: {{ t.value }}
+      </li>
+    </ul>
+  </div>
+</div>
